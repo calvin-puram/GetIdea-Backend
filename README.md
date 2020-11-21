@@ -1,46 +1,31 @@
-# Nodejs/Typescript Starter Template
+# GetIdea Backend API Using Expressjs
 
-This is a Nodejs biolerplate template for easy building up of backend web app. It has authentication out of the box with features such as
+> Backend Api for GetIdea application which is a business ideas directory. 
 
-### Auth Route
+## PROJECT ARCHITECTURE
 
-- register user,
-- login user,
-- forgot password,
-- reset password,
-- get loggedIn user,
-- update user password,
-- update user details such as email, name
-- logout
+The development of this API took into account several specific needs. It is carefully crafted as one that can easily require updates and new features, taking into account the need for scalability, easy maintainance, performance and security. I have chosen to use the MODEL-VIEW CONTROLLER (MVC)
+architecture.
 
-### User Route (Protected)
+## Usage
 
-- get all users,
-- get single user,
-- delete users
+Rename "config/config.env.env" to "config/config.env" and update the values/settings to your own.
 
-### Home Route
+## Install Dependencies
 
-- direct user to home
+```
+npm install
+```
 
-### Project Architecture
+## Run App
 
-I have chosen to use a Model View Controller Architecture that organises the codebase into models, views and controllers.
+```
+# run in development
+npm run dev
 
-### Utilities Developed
+#run in production
+npm start
+```
 
-- auth middleware: This verifies users token whenever they want to visit protected routes.
-- user role: This defines user role by default registered users have a role of user.
-- error middleware : This intercepts and handles all the errors that occur throughout the flow of the application.
-
-### Security
-
-The API is protected with JWT (JSON WEB TOKEN).This allows the application to identify authorized users and restrict access to data for unauthorised users.
-
-Passwords have also been hashed with strong a crypto-algorithm.
-
-**A structure has been established for the implementation of rate-limiting**, to circumvent DOS security vulnerabilities with the system.
-
-- express-mongo-sanitize: which sanitizes user-supplied data to prevent MongoDB Operator Injection.
-- helmet: secure the application by setting various HTTP headers.
-- hpp: this protect the app against HTTP Parameter Pollution Attack
+- version: 1.0.0
+- licence: MIT

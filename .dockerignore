@@ -1,0 +1,10 @@
+.git/
+.gitignore
+**/.gitkeep
+**/.DS_Store
+.dockerignore
+Dockerfile
+docker-compose.yml
+node_modules/
+npm-dubug.log
+README.md

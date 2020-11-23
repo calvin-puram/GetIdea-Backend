@@ -46,12 +46,12 @@ class AuthController {
       const userData: User = req.body;
       const user: User = await this.AuthService.register(userData);
 
-      const url: string =
-        process.env.NODE_ENV === "development"
-          ? "http://localhost:4000/"
-          : "https://domain.com/home";
+      // const url: string =
+      //   process.env.NODE_ENV === "development"
+      //     ? "http://localhost:4000/"
+      //     : "https://domain.com/home";
 
-      await new SendEmail(user, url).sendWelcome();
+      // await new SendEmail(user, url).sendWelcome();
 
       this.setToken(user, res, 200);
     }

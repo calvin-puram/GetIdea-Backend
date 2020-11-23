@@ -60,7 +60,7 @@ UserSchema.pre<User & mongoose.Document>("save", async function (
 // send jwt to user
 UserSchema.methods.sendToken = async function (): Promise<string> {
   const token = await jwt.sign({ id: this._id }, process.env.JWT_SECRET, {
-    expiresIn: process.env.JWT_EXPIRES,
+    expiresIn: "30d",
   });
 
   return token;

@@ -50,5 +50,5 @@ IdeasSchema.pre<Idea & mongoose.Document>('save', function(next) {
 });
 
 
-const IdeasModel = mongoose.model<Idea & mongoose.Document>("Ideas", IdeasSchema);
-export default IdeasModel;
+const Ideas = mongoose.model<Idea & mongoose.Document>("Ideas", IdeasSchema);
+export default Ideas;

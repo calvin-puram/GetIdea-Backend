@@ -84,14 +84,14 @@ class App {
     };
 
     mongoose
-      .connect(process.env.MONGO_URL_TEST, { ...options })
+      .connect(process.env.MONGO_URL, { ...options })
       .then(() => logger.info("connected to database"))
       .catch((err) => logger.error(err.message));
   }
 
   private initializeRoutes(routes: Route[]) {
     routes.forEach((route) => {
-      this.app.use("/", route.router);
+      this.app.use("/api/v1", route.router);
     });
   }
 

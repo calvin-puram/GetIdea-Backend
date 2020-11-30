@@ -5,9 +5,17 @@ import UserRoute from "./routes/user.routes";
 import IdeaRoute from "./routes/ideas.routes";
 import RatingRoute from "./routes/rating.routes";
 import AuthRoute from "./routes/auth.routes";
+import FavoriteRoute from "./routes/favorite.routes";
 import logger from "./utils/logger";
 
-const app = new App([new IndexRoute(), new UserRoute(), new AuthRoute(), new IdeaRoute(), new RatingRoute()]);
+const app = new App([
+  new IndexRoute(),
+  new UserRoute(),
+  new AuthRoute(),
+  new IdeaRoute(),
+  new RatingRoute(),
+  new FavoriteRoute(),
+]);
 
 const server = app.listen();
 

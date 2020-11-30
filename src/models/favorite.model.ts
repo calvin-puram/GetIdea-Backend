@@ -20,9 +20,9 @@ const FavoriteSchema = new mongoose.Schema({
 
 FavoriteSchema.index({ idea: 1, user: 1 }, { unique: true });
 
-// FavoriteSchema.pre<IFavorite & mongoose.Document>(/^find/, function(next) {
-//   this.populate('tour');
-//   next();
-// });
+FavoriteSchema.pre<IFavorite & mongoose.Document>(/^find/, function(next) {
+  this.populate('idea');
+  next();
+});
 
 module.exports = mongoose.model<IFavorite & mongoose.Document>('Favorite', FavoriteSchema);

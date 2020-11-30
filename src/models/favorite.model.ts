@@ -25,4 +25,4 @@ FavoriteSchema.pre<IFavorite & mongoose.Document>(/^find/, function(next) {
   next();
 });
 
-module.exports = mongoose.model<IFavorite & mongoose.Document>('Favorite', FavoriteSchema);
+export default mongoose.model<IFavorite & mongoose.Document>('Favorite', FavoriteSchema);

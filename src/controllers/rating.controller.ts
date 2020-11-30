@@ -2,17 +2,15 @@ import { NextFunction, Request, Response } from "express";
 import RatingService from "../service/rating.service";
 import Rating from "../interface/rating.interface";
 import catchAsync from "../utils/catchAsync";
+import { RequestWithUser } from "../interface/auth.interface";
 
 class RatingController {
   public RatingService = new RatingService();
 
   public CreateIdea = catchAsync(
-    async (req: Request, res: Response, next: NextFunction) => {
-       //@ts-ignore
-      console.log(req.user.id)
+    async (req: RequestWithUser, res: Response, next: NextFunction) => {
       const data: Rating = {
           rating: req.body.rating * 1,
-          //@ts-ignore
           user:req.user.id,
           idea: req.params.id
       }

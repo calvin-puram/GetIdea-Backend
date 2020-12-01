@@ -10,15 +10,22 @@ services:
       - "4000:4000"
     links:
       - mongo
-  mongo:
-    container_name: mongo:
-    image: mongo:3.6.1
-    volumes:
-      - mongodb:/data/db
-      - mongodb_config:/data/configdb
+      
+  db:
+    container_name: db
+    image: mongo
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_DATABASE: node-app
     ports:
-        - 27017:27017
-    command: mongod
+      - '27017:27017'
+    volumes:
+      - mongo_data:/data/db
+      - mongo_config:/data/configdb
+    
+
+
+
 volumes:
-  mongodb:
-  mongodb_config:
+  mongo_data: {}
+  mongo_config: {}

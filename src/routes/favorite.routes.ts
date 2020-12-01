@@ -15,8 +15,9 @@ class FavoriteRoute implements Route {
   public initializeRoutes() {
     this.router
       .route(`${this.path}/:id`)
-      .post(protect, this.FavoriteController.CreateFavorite);
-    this.router.get(`${this.path}/`, this.FavoriteController.GetUserFavorite)
+      .post(protect, this.FavoriteController.CreateFavorite)
+      .delete(protect, this.FavoriteController.DeleteUserFavorite);
+    this.router.get(`${this.path}/`, protect, this.FavoriteController.GetUserFavorite)
   }
 }
 

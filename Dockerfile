@@ -2,7 +2,6 @@ FROM node:alpine
 
 WORKDIR /usr/app
 
-RUN npm install --global pm2
 
 COPY package*.json ./
 
@@ -14,4 +13,4 @@ EXPOSE 4000
 
 USER node
 
-CMD [ "pm2-runtime", "npm", "--", "start" ]
+CMD [  "npm",  "start" ]

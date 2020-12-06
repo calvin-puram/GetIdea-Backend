@@ -37,6 +37,7 @@ class AuthController {
 
     res.cookie("token", token, cookieOptions).status(statusCode).json({
       success: true,
+      user,
       token,
     });
   };

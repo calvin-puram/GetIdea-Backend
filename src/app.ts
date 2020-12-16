@@ -53,7 +53,7 @@ class App {
       this.app.use(helmet());
       this.app.use(hpp());
       this.app.use(morgan("tiny"));
-      this.app.use(cors({ origin: "your domain", credentials: true }));
+      this.app.use(cors());
       const limiter = rateLimit({
         windowMs: 10 * 60 * 1000,
         max: 100,
